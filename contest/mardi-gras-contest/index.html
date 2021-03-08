@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-11c838655229fa387cb",applicationID:"441183588"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(6),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(y,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1198.min.js"},h=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:w,features:{},xhrWrappable:h,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var x=0},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(7),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+	<title>WSVN 7News | Miami News, Weather, Sports | Fort Lauderdale</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2557762-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-2557762-1');
+</script>
+<link rel='dns-prefetch' href='https://s.ntv.io' />
+<link rel='dns-prefetch' href='https://s7.addthis.com' />
+<link rel='dns-prefetch' href='https://static.criteo.net' />
+<link rel='dns-prefetch' href='https://fonts.googleapis.com' />
+<link rel='dns-prefetch' href='https://s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="WSVN 7News | Miami News, Weather, Sports | Fort Lauderdale &raquo; Feed" href="../../feed/index.rss" />
+<link rel="alternate" type="application/rss+xml" title="WSVN 7News | Miami News, Weather, Sports | Fort Lauderdale &raquo; Comments Feed" href="../../comments/feed/index.rss" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/wsvn.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.6.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='all-css-0' href='../../_static/index%EF%B9%96%EF%B9%96%EA%A4%B7wp-includes%EA%A4%B7css%EA%A4%B7dist%EA%A4%B7block-library%EA%A4%B7style.min.css,%EA%A4%B7wp-content%EA%A4%B7themes%EA%A4%B7sunbeam%EA%A4%B7assets%EA%A4%B7css%EA%A4%B7sunbeam.min.css%EF%B9%96m=1614009892.css' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>.has-text-align-justify{text-align:justify;}
+</style>
+<link crossorigin="anonymous" rel='stylesheet' id='roboto-condensed-css'  href='https://fonts.googleapis.com/css?family=Roboto+Condensed%3A400%2C400italic%2C300italic%2C300%2C700%2C700italic%7CRoboto+Slab%3A400%2C300%7CRoboto%3A400%2C400italic&amp;ver=5.6.2' media='all' />
+<link rel='stylesheet' id='all-css-2' href='../../_static/index%EF%B9%96%EF%B9%96%EA%A4%B7wp-content%EA%A4%B7plugins%EA%A4%B7brightcove-video-connect%EA%A4%B7assets%EA%A4%B7css%EA%A4%B7brightcove_playlist.min.css,%EA%A4%B7wp-content%EA%A4%B7mu-plugins%EA%A4%B7jetpack-9.5%EA%A4%B7css%EA%A4%B7jetpack.css%EF%B9%96m=1614194688.css' type='text/css' media='all' />
+<script src='https://s.ntv.io/serve/load.js?ver=5.6.2' async='' id='nativo-js'></script>
+<script type='text/javascript' src='../../_static/index%EF%B9%96%EF%B9%96-eJx9jMEKwjAQRH%EA%A4%B7IdhsQIQfxW9JmrRuyW81uqv37BvHQkzAwMLx58H52JFOuERVSy6ti2X7VM0mf9AT%EA%A4%B7oI5pLsHwCE+LGIqBPZDbRauMGBiCKtrXsKLEpcA944dGymQbRFI7Ds1146u7uPMweO982gHDsD96.js'></script>
+<script src='https://static.criteo.net/js/ld/publishertag.js?ver=0.3.7' id='criteo-ad-script-js'></script>
+<link rel="https://api.w.org/" href="../../wp-json/index.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc.php%EF%B9%96rsd.xml" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.6.2" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='https://wsvn.com/?p=592282' />
+<link rel="alternate" type="application/json+oembed" href="https://wsvn.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwsvn.com%2Fcontest%2Fmardi-gras-contest%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://wsvn.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwsvn.com%2Fcontest%2Fmardi-gras-contest%2F&amp;format=xml" />
+<style type='text/css'>img#wpstats{display:none}</style><script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script><link type="text/plain" rel="author" href="../../wp-content/themes/sunbeam/humans.txt.html" />
+    	<meta property="fb:app_id"       content="133219314904" />
+    	<meta property="fb:pages"        content="29790827612" />
+				<meta property="og:url"          content="https://wsvn.com/contest/mardi-gras-contest/" />
+				<meta property="og:type"         content="article" />
+				<meta property="og:title"        content="" />
+				<meta property="og:description"  content="WSVN WANTS TO SEND YOU TO UNIVERSAL ORLANDO RESORT! &nbsp; This Spring, things are getting spicy. Universal Orlando Resort is serving up Mardi Gras with a whole..." />
+				<meta property="og:image"        content="" />
+				<meta name="twitter:card"        content="summary_large_image" />
+				<meta name="twitter:site"        content="@wsvn" />
+				<meta name="twitter:title"       content="" />
+				<meta name="twitter:description" content="WSVN WANTS TO SEND YOU TO UNIVERSAL ORLANDO RESORT! &nbsp; This Spring, things are getting spicy. Universal Orlando Resort is serving up Mardi Gras with a whole..." />
+				<meta name="twitter:image"       content="" /><meta name="google-site-verification" content="lxEesbV2bhDmE84Y_CLV9F5QxRECh8cDswoWQ7742L4" /><link rel="amphtml" href="https://wsvn.com/contest/mardi-gras-contest/amp/"><link rel="icon" href="../../wp-content/uploads/sites/2/2020/08/cropped-cropped-7News_logo_FBbghex-1-1%EF%B9%96w=32.png" sizes="32x32" />
+<link rel="icon" href="../../wp-content/uploads/sites/2/2020/08/cropped-cropped-7News_logo_FBbghex-1-1%EF%B9%96w=192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="../../wp-content/uploads/sites/2/2020/08/cropped-cropped-7News_logo_FBbghex-1-1%EF%B9%96w=180.png" />
+<meta name="msapplication-TileImage" content="https://wsvn.com/wp-content/uploads/sites/2/2020/08/cropped-cropped-7News_logo_FBbghex-1-1.png?w=270" />
+<script data-ad-client="ca-pub-4137233042416176" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body class="sunbeam-contest-template-default single single-sunbeam-contest postid-592282 wsvn no-header-notification">
+
+						<!-- /1055211/WSVN/interstitial -->
+			<div id='div-gpt-ad-1473959713121-0' ></div>
+			
+	<div id="mobile-menu-background"></div>
+
+	<div class="main-body-wrap" id="main-body-wrap-js">
+
+		
+		<header id="header" class="site-header" role="banner">
+			<div class="wrapper">
+				<a class="logo" href="../../index.html">Logo</a>
+
+				<nav class="primary-navigation"><ul id="menu-main-navigation" class="menu"><li id="menu-item-60734" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-has-children menu-item-60734"><a href="../../news/index.html">News</a>
+<div class='sub-menu'><div class='wrapper'><ul>
+	<li id="menu-item-60738" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60738"><a href="../../news/local/index.html">Local</a></li>
+	<li id="menu-item-69089" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-69089"><a href="../../news/local/miami-dade/index.html">Miami-Dade</a></li>
+	<li id="menu-item-69087" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-69087"><a href="../../news/local/broward/index.html">Broward</a></li>
+	<li id="menu-item-73870" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-73870"><a href="../../news/local/florida/index.html">Florida</a></li>
+	<li id="menu-item-245171" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-245171"><a href="../../tag/trending/index.html">Trending</a></li>
+	<li id="menu-item-60746" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60746"><a href="../../news/us-world/index.html">US &amp; World</a></li>
+	<li id="menu-item-201202" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-201202"><a href="../../news/politics/index.html">Politics</a></li>
+	<li id="menu-item-60737" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60737"><a href="../../news/help-me-howard/index.html">Help Me Howard</a></li>
+	<li id="menu-item-138455" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-138455"><a href="../../news/hope-and-healing/index.html">Hope and Healing</a></li>
+	<li id="menu-item-114456" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-114456"><a href="../../news/investigations/index.html">Investigations</a></li>
+	<li id="menu-item-60743" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60743"><a href="../../news/special-reports/index.html">Special Reports</a></li>
+	<li id="menu-item-583133" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-583133"><a href="../../tag/coronavirus/index.html">Coronavirus</a></li>
+</ul></div></div>
+</li>
+<li id="menu-item-385737" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-has-children menu-item-385737"><a href="../../weather/index.html">Weather</a>
+<div class='sub-menu'><div class='wrapper'><ul>
+	<li id="menu-item-166745" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-166745"><a href="../../weather/index.html">Forecast</a></li>
+	<li id="menu-item-268247" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268247"><a href="../../weather/index.html#radar">Interactive Radar</a></li>
+	<li id="menu-item-168034" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-168034"><a href="../../weather/index.html#watch-forecast">Video Forecast</a></li>
+	<li id="menu-item-267851" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-267851"><a href="../../weather/index.html#forecast-24-hours">Hourly Forecast</a></li>
+	<li id="menu-item-172649" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-172649"><a href="../../watches-and-warnings/index.html">Watches and Warnings</a></li>
+	<li id="menu-item-223596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223596"><a href="../../forecast-models/index.html">Forecast Models</a></li>
+	<li id="menu-item-223597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223597"><a href="../../forecast-cone/index.html">Forecast Cone</a></li>
+	<li id="menu-item-288326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-288326"><a href="../../mobile-apps/index.html">7Weather App</a></li>
+	<li id="menu-item-671258" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-671258"><a href="../../sponsored-content/hurricane-tips/index.html">Hurricane Tips</a></li>
+</ul></div></div>
+</li>
+<li id="menu-item-60752" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-has-children menu-item-60752"><a href="../../sports/index.html">Sports</a>
+<div class='sub-menu'><div class='wrapper'><ul>
+	<li id="menu-item-60795" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60795"><a href="../../sports/index.html">All Sports</a></li>
+	<li id="menu-item-60760" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60760"><a href="../../sports/miami-dolphins/index.html">Miami Dolphins</a></li>
+	<li id="menu-item-60759" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60759"><a href="../../sports/miami-heat/index.html">Miami Heat</a></li>
+	<li id="menu-item-60758" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60758"><a href="../../sports/miami-marlins/index.html">Miami Marlins</a></li>
+	<li id="menu-item-60755" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60755"><a href="../../sports/florida-panthers/index.html">Florida Panthers</a></li>
+	<li id="menu-item-60757" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60757"><a href="../../sports/college/miami-hurricanes/index.html">Miami Hurricanes</a></li>
+	<li id="menu-item-60753" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60753"><a href="../../sports/college/florida-gators/index.html">Florida Gators</a></li>
+	<li id="menu-item-60756" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60756"><a href="../../sports/college/florida-state-seminoles/index.html">Florida State Seminoles</a></li>
+</ul></div></div>
+</li>
+<li id="menu-item-60775" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-has-children menu-item-60775"><a href="../../entertainment/index.html">Entertainment</a>
+<div class='sub-menu'><div class='wrapper'><ul>
+	<li id="menu-item-60780" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60780"><a href="../../entertainment/index.html">Entertainment</a></li>
+	<li id="menu-item-60776" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60776"><a href="../../entertainment/belkys-bite-blog/index.html">Belkys&#8217; Bite Blog</a></li>
+	<li id="menu-item-60777" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60777"><a href="../../entertainment/bite-with-belkys/index.html">Bite with Belkys</a></li>
+	<li id="menu-item-60778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60778"><a href="../../entertainment/deco-drive/index.html">Deco Drive</a></li>
+	<li id="menu-item-60779" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60779"><a href="../../entertainment/shireens-favorite-things/index.html">Shireen&#8217;s Favorite Things</a></li>
+</ul></div></div>
+</li>
+<li id="menu-item-60781" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-has-children menu-item-60781"><a href="#">&#8230;</a>
+<div class='sub-menu'><div class='wrapper'><ul>
+	<li id="menu-item-233941" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-233941"><a href="../../employment/index.html">Employment Opportunities</a></li>
+	<li id="menu-item-60807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60807"><a href="../../tv-listings/index.html">TV Listings</a></li>
+	<li id="menu-item-446320" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-446320"><a href="../../7news-team/index.html">7News Team</a></li>
+	<li id="menu-item-60813" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60813"><a href="../../on-air-live-stream/index.html">Watch 7News Live</a></li>
+	<li id="menu-item-583435" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-583435"><a href="../../news/links-mentioned-on-air/index.html">Links Mentioned On Air</a></li>
+</ul></div></div>
+</li>
+<li class="menu-item header-search-toggle">
+								<a href="#">Search</a>
+								<div class="search-dropdown">
+									<div class="wrapper">
+										<form role="search" method="get" class="search-form" action="../../index.html">
+    <label for="search">
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field"
+            placeholder="Search …"
+            value="" name="s"
+            title="Search for:" />
+    </label>
+
+    <input type="submit" class="search-submit"
+        value="Search" />
+</form>
+
+
+									</div>
+								</div>
+							</li></ul></nav>
+					<a href="../../on-air-live-stream/index.html" class="live-news -on-air">Live News</a>
+				<div class="header-weather">
+	<a href="../../weather/index.html">
+		<span class="temperature">&deg;</span>
+		<div class="icon weather-icon"></div>
+	</a>
+</div>
+				<button class="hamburger-toggle" id="hamburger-toggle">
+					<span class="lines"></span>
+					<span class="text">Menu</span>
+				</button>
+			</div>
+
+			<nav id="primary-navigation-mobile" class="primary-navigation-mobile mobile-only"><ul id="menu-main-navigation-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-has-children menu-item-60734"><a href="../../news/index.html">News</a>
+<div class='sub-menu'><div class='wrapper'><ul>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60738"><a href="../../news/local/index.html">Local</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-69089"><a href="../../news/local/miami-dade/index.html">Miami-Dade</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-69087"><a href="../../news/local/broward/index.html">Broward</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-73870"><a href="../../news/local/florida/index.html">Florida</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-245171"><a href="../../tag/trending/index.html">Trending</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60746"><a href="../../news/us-world/index.html">US &amp; World</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-201202"><a href="../../news/politics/index.html">Politics</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60737"><a href="../../news/help-me-howard/index.html">Help Me Howard</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-138455"><a href="../../news/hope-and-healing/index.html">Hope and Healing</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-114456"><a href="../../news/investigations/index.html">Investigations</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60743"><a href="../../news/special-reports/index.html">Special Reports</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-583133"><a href="../../tag/coronavirus/index.html">Coronavirus</a></li>
+</ul></div></div>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-has-children menu-item-385737"><a href="../../weather/index.html">Weather</a>
+<div class='sub-menu'><div class='wrapper'><ul>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-166745"><a href="../../weather/index.html">Forecast</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268247"><a href="../../weather/index.html#radar">Interactive Radar</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-168034"><a href="../../weather/index.html#watch-forecast">Video Forecast</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-267851"><a href="../../weather/index.html#forecast-24-hours">Hourly Forecast</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-172649"><a href="../../watches-and-warnings/index.html">Watches and Warnings</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223596"><a href="../../forecast-models/index.html">Forecast Models</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223597"><a href="../../forecast-cone/index.html">Forecast Cone</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-288326"><a href="../../mobile-apps/index.html">7Weather App</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-671258"><a href="../../sponsored-content/hurricane-tips/index.html">Hurricane Tips</a></li>
+</ul></div></div>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-has-children menu-item-60752"><a href="../../sports/index.html">Sports</a>
+<div class='sub-menu'><div class='wrapper'><ul>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60795"><a href="../../sports/index.html">All Sports</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60760"><a href="../../sports/miami-dolphins/index.html">Miami Dolphins</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60759"><a href="../../sports/miami-heat/index.html">Miami Heat</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60758"><a href="../../sports/miami-marlins/index.html">Miami Marlins</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60755"><a href="../../sports/florida-panthers/index.html">Florida Panthers</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60757"><a href="../../sports/college/miami-hurricanes/index.html">Miami Hurricanes</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60753"><a href="../../sports/college/florida-gators/index.html">Florida Gators</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60756"><a href="../../sports/college/florida-state-seminoles/index.html">Florida State Seminoles</a></li>
+</ul></div></div>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-has-children menu-item-60775"><a href="../../entertainment/index.html">Entertainment</a>
+<div class='sub-menu'><div class='wrapper'><ul>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60780"><a href="../../entertainment/index.html">Entertainment</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60776"><a href="../../entertainment/belkys-bite-blog/index.html">Belkys&#8217; Bite Blog</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60777"><a href="../../entertainment/bite-with-belkys/index.html">Bite with Belkys</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60778"><a href="../../entertainment/deco-drive/index.html">Deco Drive</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60779"><a href="../../entertainment/shireens-favorite-things/index.html">Shireen&#8217;s Favorite Things</a></li>
+</ul></div></div>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-has-children menu-item-60781"><a href="#">&#8230;</a>
+<div class='sub-menu'><div class='wrapper'><ul>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-233941"><a href="../../employment/index.html">Employment Opportunities</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60807"><a href="../../tv-listings/index.html">TV Listings</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-446320"><a href="../../7news-team/index.html">7News Team</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60813"><a href="../../on-air-live-stream/index.html">Watch 7News Live</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-583435"><a href="../../news/links-mentioned-on-air/index.html">Links Mentioned On Air</a></li>
+</ul></div></div>
+</li>
+</ul></nav>		</header>
+
+					<div class="wallpaper-ad">
+							<div id="wallpaper"></div>
+						</div>
+		
+					<div id="infolinks"></div>
+			
+		
+		<div class="header-search-mobile mobile-only">
+			<div class="search-dropdown">
+				<div class="wrapper">
+					<form role="search" method="get" class="search-form" action="../../index.html">
+    <label for="search">
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field"
+            placeholder="Search …"
+            value="" name="s"
+            title="Search for:" />
+    </label>
+
+    <input type="submit" class="search-submit"
+        value="Search" />
+</form>
+
+				</div>
+			</div>
+		</div>
+
+	<div class="content-wrapper">
+		<div class="wrapper">
+
+			<div class="grid-container">
+
+									<div class="sidebar -single-left -sticky">
+						<div class="ad">
+										<div class="OUTBRAIN" data-src="http://wsvn.com/contest/mardi-gras-contest/" data-widget-id="SB_1" data-ob-template="wsvn"></div>
+									</div>
+					</div>
+				
+				<div class="primary-content" id="primary-content" role="main">
+
+					
+<article id="post-592282" class="post-592282 sunbeam-contest type-sunbeam-contest status-publish hentry">
+
+	<header class="entry-header">
+			</header>
+
+			<div class="entry-content">
+			<h1 style="text-align: center">WSVN WANTS TO SEND YOU TO UNIVERSAL ORLANDO RESORT!</h1>
+<p><img loading="lazy" class="aligncenter wp-image-866037 size-large" src="https://wsvn.com/wp-content/uploads/sites/2/2020/02/Unknown-1.jpeg?quality=60&amp;strip=color&amp;w=1024" alt="" width="1024" height="1022" srcset="https://wsvn.com/wp-content/uploads/sites/2/2020/02/Unknown-1.jpeg 2500w, https://wsvn.com/wp-content/uploads/sites/2/2020/02/Unknown-1.jpeg?resize=150,150 150w, https://wsvn.com/wp-content/uploads/sites/2/2020/02/Unknown-1.jpeg?resize=300,300 300w, https://wsvn.com/wp-content/uploads/sites/2/2020/02/Unknown-1.jpeg?resize=768,767 768w, https://wsvn.com/wp-content/uploads/sites/2/2020/02/Unknown-1.jpeg?resize=1024,1022 1024w, https://wsvn.com/wp-content/uploads/sites/2/2020/02/Unknown-1.jpeg?resize=1536,1534 1536w, https://wsvn.com/wp-content/uploads/sites/2/2020/02/Unknown-1.jpeg?resize=2048,2045 2048w, https://wsvn.com/wp-content/uploads/sites/2/2020/02/Unknown-1.jpeg?resize=495,495 495w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>&nbsp;</p>
+<h3 class="p1" style="text-align: center">This Spring, things are getting spicy. Universal Orlando Resort is serving up Mardi Gras with a whole new sizzle. With yummy food, non-stop fun and all sorts of sensations to savor. Mardi Gras 2021: International Flavors of Carnaval. Daily from February 6th through March 28th.</h3>
+<h3 class="p1" style="text-align: center"></h3>
+<h3 class="p1" style="text-align: center">For important safety information at Universal Orlando Resort, visit <a href="http://www.universalorlando.com/safetyinfo"><span class="s1">www.universalorlando.com/safetyinfo</span></a> or download the Universal Orlando App.</h3>
+<p class="p1">You could win an amazing Grand prize package for 4 people, including:</p>
+<p class="p2">•<span class="s2">         </span>(4) 3 Park 3 Day Park To Park Tickets for admission to Universal Studios Florida, Universal’s Volcano Bay Water Theme Park, and Universal’s Islands of Adventure.</p>
+<p class="p2">•<span class="s2">         </span>(2) Night stay at Universal’s Cabana Bay Beach Resort</p>
+<p class="p3">•<span class="s2">         </span>(2) Night Resort Parking Pass</p>
+<h1 style="text-align: center"><strong>ENTER NOW!</strong></h1>
+<div id='contact-form-592282'>
+<form action='#contact-form-592282' method='post' class='contact-form commentsblock'>
+
+<div class='grunion-field-wrap grunion-field-name-wrap'  >
+<label
+				for='g592282-name'
+				class='grunion-field-label name'
+				>Name<span>(required)</span></label>
+<input
+					type='text'
+					name='g592282-name'
+					id='g592282-name'
+					value=''
+					class='name' 
+					required aria-required='true'
+				/>
+	</div>
+
+<div class='grunion-field-wrap grunion-field-email-wrap'  >
+<label
+				for='g592282-email'
+				class='grunion-field-label email'
+				>Email<span>(required)</span></label>
+<input
+					type='email'
+					name='g592282-email'
+					id='g592282-email'
+					value=''
+					class='email' 
+					required aria-required='true'
+				/>
+	</div>
+
+<div class='grunion-field-wrap grunion-field-text-wrap'  >
+<label
+				for='g592282-phonenumber'
+				class='grunion-field-label text'
+				>Phone Number<span>(required)</span></label>
+<input
+					type='text'
+					name='g592282-phonenumber'
+					id='g592282-phonenumber'
+					value=''
+					class='text' 
+					required aria-required='true'
+				/>
+	</div>
+
+<div class='grunion-field-wrap grunion-field-checkbox-wrap'  >
+<label class='grunion-field-label checkbox'>		<input type='checkbox' name='g592282-bysubmittinganentryistatethatiam18yearsofageorolderandihavefullyreadandagreetothetermsandconditionsofthiscontest' value='Yes' class='checkbox'  required aria-required='true'/> 
+		By submitting an entry I state that I am 18 years of age or older, and I have fully read and agree to the terms and conditions of this contest.<span>(required)</span></label>
+<div class='clear-form'></div>
+	</div>
+
+<div class='grunion-field-wrap grunion-field-checkbox-wrap'  >
+<label class='grunion-field-label checkbox'>		<input type='checkbox' name='g592282-yesiwouldliketoreceivenewsandspecialoffersfromuniversalorlandoresortandagreetothenbcuniversalprivacypolicy' value='Yes' class='checkbox'  /> 
+		Yes, I would like to receive news and special offers from Universal Orlando Resort and agree to the NBCUniversal Privacy Policy.</label>
+<div class='clear-form'></div>
+	</div>
+	<p class='contact-submit'>
+		<button type='submit' class='-blue-fill'>Submit</button>		<input type='hidden' name='contact-form-id' value='592282' />
+		<input type='hidden' name='action' value='grunion-contact-form' />
+		<input type='hidden' name='contact-form-hash' value='9e9753d8b35e765fb57e9fc289b6a8adce23faed' />
+	</p>
+</form>
+</div>
+<p>NBCUniversal Privacy Policy (<a href="https://www.nbcuniversal.com/privacy)">https://www.nbcuniversal.com/privacy)</a>.</p>
+<p class="p1">Universal Orlando continues to implement enhanced health and safety procedures and those practices will be applied to all experiences taking place during Universal Orlando’s Mardi Gras celebration. Imagery shown may not represent current operational and safety guidelines.</p>
+<p class="p1">Cabana Bay Beach Resort TM &amp; © 2021 UCF Hotel Venture II. Universal elements and all related indicia TM &amp; © 2021Universal Studios. All rights reserved.</p>
+<p class="p1">When visiting Universal Orlando Resort, you are asked to follow guidelines from the CDC, health officials, and Universal Orlando policies. Review important safety guidelines at UniversalOrlando.com/SafetyInfo.</p>
+			<span class="terms_conditions"><p><button class='-blue-fill' id='rules_regulations_toggle'>View Rules & Regulations</button><p><div id='rules_regulation_text'class='rules_regulations_text'> <p>Promotion Rules and Regulations</p>
+<p>1. HOW TO PLAY. No purchase necessary. Register by completing promotion entry form found at landing page to be added.</p>
+<p>2. SELECTION OF WINNERS: Promotion starts on March 1, 2021 and ends on March 14 2021. On or about March 15, 2020 WSVN will randomly select one (1) Grand Prize winner and five (5) secondary winners. Winners will be notified by telephone on or about December 15, 2020. Odds of winning depend on number of eligible entries received. If an entrant is selected as a winner and cannot be reached by telephone after reasonable time and effort, is found to be ineligible, or otherwise fails to comply with these Official Rules, that entrant may be disqualified and an alternate winner shall be selected at random from the remaining entries until an eligible winner is selected and notified.</p>
+<p>PRIZE: There will be one (1) Grand Prize (the “Grand Prize”) and five (5) secondary prize (each a “Secondary Prize”) awarded.<br />
+The Grand Prize winner (“Grand Prize Winner”) will receive:<br />
+Two (2) nights standard hotel accommodation (one room, double occupancy, room and tax only) at Universal’s Cabana Bay Beach Resort or at another on-site hotel (as determined by Universal Orlando in their sole discretion).<br />
+Two (2) Overnight Parking at on-site hotel for Winner and up to one Three (3) Guests (valid for one (1) vehicle).<br />
+Four (4) Universal Orlando 3 Park 3 Day Park-to-Park tickets for Grand Prize Winner and up to three (3) Guests.</p>
+<p>Each Secondary Prize winner (“Secondary Prize Winner”) will receive:<br />
+Four (4) 2-Park 1-Day Park-to-Park tickets for admission to Universal Studios Florida and Universal’s Islands of Adventure for Winner and up to three (3) Guests.<br />
+One (1) Universal Orlando Resort 1-Day Regular Parking access for Winner and up to one (1) Guest (valid for one (1) vehicle).</p>
+<p>The Grand Prize has an approximate Fair Market Value (“FMV”) of Two thousand eleven and 00/100 Dollars ($2,011.00). Trip must be completed by June 30th, 2021 or Prize will be forfeited. Travel dates and arrangements are subject to holiday, blackout dates, and other prize and travel restrictions. Travel dates are subject to Universal Orlando and Sponsor approval. Reservations are subject to availability. Trip must be booked at least seven (7) days prior to intended departure date. If Winner elects to partake in any or all portions of his/her Prize with fewer than the allotted number of Guests or no Guest, the Prize will be awarded to Winner and each participating Guest and any remainder of the Prize will be forfeited and shall not be subject to further or alternative compensation.<br />
+The Secondary Prize has an approximate Fair Market Value (“FMV”) of Eight Hundred Twenty-six and 00/100 Dollars ($826.00) and must be used by June 30th, 2021 or the prize will be forfeited.<br />
+Some restrictions may apply. All elements of the prize must be redeemed at the same time, and no changes will be permitted after confirmation of any redemption. Winner must be eighteen (18) years of age or older. Minor guests, if any, must be accompanied by a parent or legal guardian. Prizes are non-transferable and have no cash value. Any difference between stated FMV and final FMV of prize will not be awarded. Prize consists only of the elements expressly set forth above; no other elements or expenses (including, without limitation, insurance, meals, unspecified ground transportation, phone calls, baggage, gratuities, incidentals, souvenirs, gasoline, etc.) are included in the prize and all such expenses are the sole responsibility of the winner. Theme park tickets are valid during normal operating hours only. Operating hours and availability of attractions and shows are subject to change without notice. Some special events may be separately ticketed. Universal Orlando reserves the right to change the name of all tickets. Unless otherwise indicated, all tickets specifically exclude admission to special or separately ticketed “hard ticket” entertainment events at any of the theme parks, hotels, or within any of the Universal CityWalk venues such as Hard Rock Live® and the Blue Man Group show.<br />
+Universal City Development Partners, Ltd. d/b/a Universal Orlando Resort (“Universal Orlando”) is a prize supplier only in this promotion, is not a sponsor of this promotion and is not responsible for the administration of the promotion, the collection of entries, or the selection of any winner. Any disputes, claims, and causes of action against Universal Orlando arising out of or relating to any person’s use of or participation in any prize provided by Universal Orlando shall be resolved by applying the laws of Florida, without regard to conflict of laws provisions therein, and shall be solely and exclusively brought in state or federal courts within Orange County, Florida. Such claims shall be resolved individually, without resort to any form of class action, and all such claims shall be limited to actual out-of-pocket costs incurred, but in no event to include attorneys’ fees.<br />
+In connection with any visit to Universal Orlando Resort, please be advised that Universal’s policies, CDC guidelines, and the recommendations of health officials must be followed. Please note that any public location where people are present provides an inherent risk of exposure to COVID-19, and Universal cannot guarantee that any person will not be exposed during a visit.</p>
+<p>4. CONDITIONS &amp; RESTRICTIONS: Entrants agree WSVN has the sole right to decide all matters and disputes arising from this promotion and that its decision is final and binding. Winners by acceptance of their prize, agree to release, indemnify and hold harmless WSVN, Universal City Development Partners, Ltd. d/b/a Universal Orlando Resort and each of their employees, representatives, contractors, and advertisers, from any and all liability, loss, damage, costs or claims related to any allegation regarding the award of, the receipt of, or the use of their prize. WSVN and Universal Orlando Resort is not responsible for personal injury of any prize winner incurred in connection with the use of their prize. Winners may be required to provide acceptable proof of identity, and to execute an affidavit of eligibility and release of liability prior to receiving their prize. Winners assume all applicable tax liability for their prize and may be required to submit a completed W9 form (available at http://www.irs.gov/pub/irs-pdf/fw9.pdf) prior to receiving a prize. If there is any suspected evidence of tampering or technological corruption or if any portion of the promotion is compromised by virus, bugs, worms or unauthorized human intervention or any other causes beyond WSVN, corrupts or impairs the administration, security, fairness, or proper play of the promotion, WSVN reserves the right to terminate or suspend the promotion and select an alternative winner from entries received up to the time of such termination or suspension.</p>
+<p>5. ELIGIBILITY. Participants and winner(s) must be U.S. residents at least 18-years old. Employees and members of their immediate households, of WSVN and its advertising or promotion agencies, prize providers, participating retailers or any other companies engaged in the development, production distribution of contest materials are not eligible.</p>
+<p>6. RULES &amp; WINNERS LIST: WSVN is not permitted to give out personal information of registrants during or after promotion is finished.</p>
+<p>7. CONTEST SPONSOR: Sunbeam Television Corporation d/b/a WSVN-TV</p>
+ </div></span></span><button class='-blue-fill' id='privacy_policy_toggle'>View Privacy Policy</button><div id='privacy_policy_text' class='privacy_policy_text'> <p>PRIVACY POLICY<br />
+LAST UPDATED: May 30, 2019</p>
+<p>Privacy Policy</p>
+<p>Sunbeam Television Corp. (“we,” or “us”) respects your privacy. This Privacy Policy is intended to describe how we collect, use, and disclose Personal Information that you submit to us and that we collect through the WSVN and WHDH-TV websites, http://www.wsvn.com and http://www.whdh.com (“Sites”). This Privacy Policy applies to anyone accessing or visiting our Sites (collectively, “you”).</p>
+<p>Information We Collect</p>
+<p>For purposes of this Privacy Policy, Personal Information is information about you that can be used to identify you, which may include, for example, your name, postal address, email address, phone number, as well as other non-public information that is associated with that information. We may collect and use certain Personal Information in order to offer, maintain, provide, improve, and administer our Sites and services, including to provide news information, and to offer you additional information on our services and other offerings (collectively, “Services”), including:</p>
+<p>When you communicate with us, engage with our Sites, or sign up for materials. We collect Personal Information, such as your email address or contact information and other information you may submit, when you communicate with us, sign up to receive our newsletter, publications, subscriptions, news, offers, promotional materials, or other information, or otherwise submit information through the Sites. We may also collect Personal Information when you engage with content on or interact with our Sites, such as when you view a video.</p>
+<p>When you participate in surveys, contests, sweepstakes, or rewards or other programs. We may request or otherwise collect Personal Information, such as your name, email address, and other contact information, when you enroll or participate in surveys, contests, sweepstakes, or rewards or other programs. Participation in these programs is voluntary.</p>
+<p>When you apply for a job with us. We may collect Personal Information from you when you apply for a job with us, such as if you submit your resume for consideration.</p>
+<p>When we collect data from third parties or publicly-available sources. We may obtain certain data about you from third-party sources to help us provide and improve the Services and for marketing and advertising. We may combine your Personal Information with data we obtain from our Services, other users, or third parties to enhance your experience and improve the Services.</p>
+<p>When we leverage and/or collect cookies, device IDs, location data, data from the environment, and other tracking technologies. We may collect certain Personal Information using cookies and other technologies, such as web beacons, device IDs, geolocation, HTML5 local storage, Flash cookies, and IP addresses. We specifically use browser cookies for different purposes, including cookies that are strictly necessary for functionality and cookies that are used for personalization, performance/analytics, and advertising. Our “Cookies and Similar Technologies” section contains more information and options to control or opt-out of certain data collection or uses.</p>
+<p>You are not required to provide all Personal Information identified in this Privacy Policy in order to use the Sites; however, please note that if you do not provide the Personal Information requested, we may be unable to provide some or all of the Services to you.</p>
+<p>Information Use and Disclosure</p>
+<p>We may use the Personal Information we collect in order to offer, maintain, provide, improve, and administer the Sites and Services, including:</p>
+<p>To communicate with you regarding the Services, features, and other offerings;<br />
+To register you for contests, promotions, and sweepstakes, and to notify contest winners and award prizes;<br />
+To send surveys in connection with our Services;<br />
+For marketing purposes, including to contact you about offers, products, promotions, subscriptions, developments or services which we think may be of interest to you, and for third parties’ marketing purposes in connection with our Services;<br />
+To develop, provide, and improve our Sites and Services, including to better tailor the features, performance and support of our Services, and for statistical and analytics purposes;<br />
+To assist in the investigation of suspected illegal or wrongful activity, and to protect and defend our rights and property, or the rights or safety of third parties;<br />
+To enforce our Terms of Services, this Privacy Policy, or agreements with third parties;<br />
+To comply with laws, regulators, court orders, or other legal obligations, or pursuant to legal process.<br />
+We may disclose your Personal Information as described in this Privacy Policy, including:</p>
+<p>We may disclose some or all of your Personal Information to our subsidiaries, joint ventures, and other companies under our common control (collectively, “Affiliates”), for the purposes described in this Privacy Policy. Where we share Personal Information with our Affiliates, we will require our Affiliates to honor this Privacy Policy.</p>
+<p>Service Providers and Vendors. We may disclose Personal Information to distributors, service providers, marketing partners, payment processors, and vendors in order to maintain the Sites and provide, improve, and personalize the products and Services, including to fulfill a request for programs or services. We may also share Personal Information for other technical and processing functions, such as sending e-mails on our behalf, fulfilling orders, technical support, or otherwise operating the Sites, for analytics, and for marketing and advertising purposes.</p>
+<p>Pursuant to Legal Process and Protection of Rights and Interests. We may also disclose Personal Information to comply with applicable laws and regulations, to respond to a subpoena, search warrant, or other lawful request for information we receive, or as otherwise pursuant to legal process. We may also use and disclose Personal Information to establish or exercise our legal rights, to enforce our Terms of Services or this Privacy Policy, to assert and defend against legal claims, or if we believe such disclosure is necessary to investigate, prevent, or take other action regarding actual or suspected illegal or fraudulent activities or potential threats to the physical safety or well-being of any person.</p>
+<p>Business Transactions. Subject to applicable law, we reserve the right to transfer some or all Personal Information in our possession to a successor organization in the event of a merger, acquisition, bankruptcy, or other sale or transfer of all or a portion of our assets, including for the purpose of permitting the due diligence required to decide whether to proceed with a transaction. Other than to the extent ordered by a bankruptcy or other court, if the sale occurs, the purchaser will be entitled to use and disclose the Personal Information collected by us, and the purchaser will assume the rights and obligations regarding Personal Information as described in this Privacy Policy.<br />
+Cookies and Similar Technologies</p>
+<p>We use cookies and similar technologies to enhance and customize your experience on the Sites and for analytics. We also use cookies and similar technologies for purposes of marketing and advertising, including interest-based advertising.</p>
+<p>A “cookie” is a small text file that a web server stores in browser software. A browser sends cookies to a server when the browser makes a connection to the server (for example, when requesting a web page from the same domain that created the cookie). The purpose of cookies is to remember the browser over time and distinguish one browser instance (or user) from all others. Some cookies and other technologies may serve to track Personal Information previously entered by a web user on our Site. Most browsers allow you to control cookies, including whether or not to accept them, and how to remove them. Cookies can remember login information, preferences, and similar information.</p>
+<p>Cookies, as well as other tracking technologies such as HTML5 local storage, and Local Shared Objects (such as “Flash” cookies), and similar mechanisms, may record information such as a unique identifier, information you enter in a form, IP address, and other categories of data.</p>
+<p>We also use web beacons or “pixels,” and in certain circumstances may collect IP address, screen resolution and browser software and operating system types, clickstream patterns, dates and times that our site is accessed, and other categories of data.</p>
+<p>If you want to block the use and saving of cookies from the Sites on to the computer’s hard drive, you should take the necessary steps within your web browser’s settings to block all cookies from the Sites and their external serving vendors. Please note that if you choose to erase or block your cookies, certain parts of our Sites may not function correctly. For information on how to disable cookies, refer to your browser’s documentation.</p>
+<p>Interest-Based Advertising</p>
+<p>Interest-based advertising is advertising that is targeted to you based on your web browsing and app usage over time and across websites or apps. You have the option to restrict the use of information for interest-based advertising and to opt-out of receiving interest-based ads. Depending on from where you access our Sites, you may also be asked to consent to our use of cookies, including advertising cookies.</p>
+<p>The opt-outs for interest-based advertising require that strictly necessary cookies are not blocked by the settings in your web browser. We support the Self-Regulatory Principles for Online Behavioral Advertising of the Digital Advertising Alliance in the U.S., the Canadian Digital Advertising Alliance in Canada, and the European Digital Advertising Alliance in the EU. If you live in the United States, Canada, or the European Union, you can visit Ad Choices (US), Your Ad Choices (Canada), or Your Online Choices (EU) to find a convenient place to opt-out of interest-based advertising with participating entities for each region. These websites also provide detailed information about how interest-based advertising works. Opting out does not mean that you will no longer receive advertising from us, or when you use the Internet. It just means that the data collected from our website will not be used for interest-based advertising and that the advertising you see displayed on websites will not be customized to your interests.</p>
+<p>DO-NOT-TRACK</p>
+<p>Do-Not-Track is a public-private initiative that has developed a “flag” or signal that an Internet user may activate in the user’s browser software to notify websites that the user does not wish to be “tracked” by third-parties as defined by the initiative. The online community has not agreed on what actions, if any, should be taken by the websites that receive the “do not track” signal, and therefore Do-Not-Track is not yet standardized. Please note that the Sites do not alter their behavior or use practices when we receive a Do Not Track signal from your browser.</p>
+<p>Social Network Widgets</p>
+<p>Our Sites may include social network sharing widgets that may provide information to their associated social networks or third parties about your interactions with our web pages that you visit, even if you do not click on or otherwise interact with the plug-in or widget. Information may be transmitted from your browser and may include an identifier assigned by the social network or third party, information about your browser type, operating system, device type, IP address, and the URL of the web page where widget appears. If you use social network tools or visit social networking sites, we encourage you to read their privacy disclosures, to learn what information they collect, use, and share.</p>
+<p>De-Identified or Anonymized Data</p>
+<p>We may create de-identified or anonymous data from Personal Information by removing data components (such as your name, email address, or linkable tracking ID) that makes the data personally identifiable to you or through obfuscation or through other means. Our use of de-identified and anonymized data is not subject to this Privacy Policy.</p>
+<p>Information from Children Under 13 Years of Age</p>
+<p>We do not knowingly collect Personal Information online from individuals under 13 years without parental consent. If you become aware that an individual under 13 years of age has provided us with Personal Information without parental consent, please contact us at privacypolicy@wsvn.com or the address listed in the “Contact Us” section of this Privacy Policy. If we become aware that an individual under 13 years has provided us with Personal Information without parental consent, we will take steps to remove the data as permitted by law.</p>
+<p>Links to Other Sites</p>
+<p>Our Sites may contain links or otherwise provide access to another website, mobile application, or Internet location (collectively “Third-Party Sites”). We provide these links merely for your convenience. We have no control over, do not review, and are not responsible for Third-Party Sites, their content, or any goods or services available through the Third-Party Sites. Our Privacy Policy does not apply to Third-Party Sites. We encourage you to review the privacy policies of any Third-Party Sites with which you choose to interact.</p>
+<p>Opting-Out of Certain Communications</p>
+<p>If you want to stop receiving future marketing messages and materials, you can do so by clicking the “unsubscribe” link included in our email marketing messages or by contacting us at privacypolicy@wsvn.com or the contact information listed in the “Contact Us” section of this Privacy Policy. Once you have submitted your email address to “unsubscribe,” please note that you may continue to receive emails for a period of time while our system updates your request. Please note that you may continue to receive communications from us for non-marketing purposes, such as communications regarding the Services.</p>
+<p>Processing in the United States</p>
+<p>Please note that if you are visiting the Sites from outside of the United States, your information may be transferred to, stored, and/or processed in the United States. The data protection and other laws of the United States and other countries might not be as comprehensive as those in your country. If you are located outside of the United States, the transfer of Personal Information is necessary to provide you with the requested information, products, and services and/or to perform any requested transaction. By using any portion of the Sites, you acknowledge and consent to the transfer of your information to our facilities in the United States.</p>
+<p>Security</p>
+<p>We implement technical and organizational security safeguards designed to protect your Personal Information. However, please be advised that we cannot fully eliminate security risks associated with the storage and transmission of Personal Information.</p>
+<p>Accessing or Updating Your Information</p>
+<p>Subject to applicable law, you may also make a request to access, update, correct, modify, or delete your Personal Information that we maintain by contacting us at privacypolicy@wsvn.com or the contact information listed in the “Contact Us” section of this Privacy Policy.</p>
+<p>California Privacy Rights</p>
+<p>Under Section 1798.83 of the California Civil Code, residents of California have the right to request from a business, with whom the California resident has an established business relationship, certain information with respect to the types of personal information (as defined by California law) the business shares with third parties for those third parties’ direct marketing purposes, and the identities of the third parties with whom the business has shared such information during the immediately preceding calendar year. To exercise your rights, you may make one request each year by emailing us at privacypolicy@wsvn.com with “Request for California Privacy Information” in the subject line and in the body of your message. Be sure to provide in the request sufficient information to properly identify you and/or the members of your family.</p>
+<p>Privacy Policy Updates</p>
+<p>We may update our Privacy Policy from time to time. The most recent version of the Privacy Policy is reflected by the version date located at the top of this Privacy Policy. We encourage you to periodically review this page to stay informed of how we may process your information.</p>
+ </div></span></span>		</div>
+	
+	<footer class="entry-footer">
+			</footer>
+
+</article>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+</div><footer id="footer" class="site-footer" role="contentinfo">
+	<div class="footer-section">
+
+		<div class="wrapper">
+			<div class="row -footer-main">
+				<a class="logo" href="../../index.html">Logo</a>
+
+				<div class="search">
+					<form role="search" method="get" class="search-form" action="../../index.html">
+    <label for="search">
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field"
+            placeholder="Search …"
+            value="" name="s"
+            title="Search for:" />
+    </label>
+
+    <input type="submit" class="search-submit"
+        value="Search" />
+</form>
+
+				</div>
+
+				<div class="social">
+					Join us:
+					<ul>
+						<li class="social-icon -facebook"><a href="https://www.facebook.com/7NewsMiami"><svg role="presentation" class="icon icon-facebook"><use xlink:href="https://wsvn.com/wp-content/themes/sunbeam/assets/svg/symbol-defs.svg#icon-facebook"/></svg></a></li>
+						<li class="social-icon -facebook"><a href="https://twitter.com/wsvn"><svg role="presentation" class="icon icon-twitter"><use xlink:href="https://wsvn.com/wp-content/themes/sunbeam/assets/svg/symbol-defs.svg#icon-twitter"/></svg></a></li>
+						<li class="social-icon -facebook"><a href="../../feed/index.rss"><svg role="presentation" class="icon icon-rss"><use xlink:href="https://wsvn.com/wp-content/themes/sunbeam/assets/svg/symbol-defs.svg#icon-rss"/></svg></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="footer-section">
+		<div class="wrapper">
+			<div class="row -footer-meta">
+				<div class="address">
+					WSVN-TVSunbeam Television Corp <br>
+			1401 79th Street Causeway<br>
+			Miami, FL 33141<br>
+			Switchboard: (305) 751-6692<br>
+			Newsroom: (305) 795-2777				</div>
+
+				<nav class="technology"><ul id="menu-footer-technology" class="menu"><li id="menu-item-59974" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59974"><a href="../../privacy-policy/index.html">PRIVACY POLICY</a></li>
+<li id="menu-item-59975" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59975"><a href="../../terms-of-services/index.html">TERMS OF SERVICES</a></li>
+<li id="menu-item-59976" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59976"><a href="../../tv-listings/index.html">TV LISTINGS</a></li>
+</ul></nav>
+				<nav class="contact"><ul id="menu-footer-contact" class="menu"><li id="menu-item-59970" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59970"><a href="../../contact-us/index.html">CONTACT US</a></li>
+<li id="menu-item-118232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-118232"><a href="../../internship-opportunities/index.html">INTERNSHIPS</a></li>
+<li id="menu-item-233943" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-233943"><a href="../../employment/index.html">EMPLOYMENT OPPORTUNITIES</a></li>
+<li id="menu-item-59972" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59972"><a href="../../advertise-with-us/index.html">ADVERTISE WITH US</a></li>
+</ul></nav>
+				<nav class="website-meta"><ul id="menu-footer-website-meta" class="menu"><li id="menu-item-59997" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59997"><a href="https://publicfiles.fcc.gov/tv-profile/wsvn">WSVN FCC PUBLIC FILE</a></li>
+<li id="menu-item-59998" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59998"><a href="../../eeo-public-file-report/index.html">EEO PUBLIC FILE REPORT</a></li>
+<li id="menu-item-59999" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59999"><a href="../../childrens-programming/index.html">CHILDRENS PROGRAMMING</a></li>
+<li id="menu-item-692817" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-692817"><a href="../../ed-ansin/index.html">ED ANSIN</a></li>
+</ul></nav>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="footer-section">
+		<div class="wrapper">
+					<div class="row -footer-copyright">All content © Copyright 2000 - 2021 WSVN-TV. All Rights Reserved. WSVN broadcast educational and informational programming for children, and file quarterly reports with the FCC detailing the station's outreach to children. The public may view the reports by going to www.WSVN.com and clicking on "FCC Public File," or by visiting the FCC's website at <a href="http://www.fcc.org/">FCC.org</a>. For more information on this site, please read our <a href="../../privacy-policy/index.html">Privacy Policy</a>, and <a href="../../terms-of-service.html">Terms of Service</a>.
+			</div>
+		
+		
+			<span class="powered-by-vip">Powered by <a href="https://wpvip.com/?utm_source=vip_powered_wpcom&amp;utm_medium=web&amp;utm_campaign=VIP%20Footer%20Credit&amp;utm_term=wsvn.com" rel="generator nofollow" class="powered-by-wpcom">WordPress.com VIP</a></span>
+		</div>
+	</div>
+</div>
+</footer>
+
+		<!-- /1055211/WSVN/gutter -->
+		<div id='div-gpt-ad-1461616099034-0' class="gutter-ad-holder" style='height:1px; width:1px;'></div>
+			<script type="text/javascript" async="async" src="https://widgets.outbrain.com/outbrain.js"></script>
+
+   	<link rel='stylesheet' id='all-css-0' href='https://wsvn.com/wp-content/mu-plugins/jetpack-9.5/modules/contact-form/css/grunion.css?m=1614194687g' type='text/css' media='all' />
+<script id='avc_frontend-js-extra'>
+var AdRefreshControl = {"advertiserIds":[],"lineItemIds":[],"sizesToExclude":"","slotIdsToExclude":[],"viewabilityThreshold":"70","refreshInterval":"30","maximumRefreshes":"10"};
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/ad-refresh-control/dist/js/frontend%EF%B9%96m=1612295106g.js'></script>
+<script src='../../wp-content/themes/sunbeam/assets/js/gpt/prebid4.13.0%EF%B9%96ver=4.13.0.js' async='' id='prebid-js'></script>
+<script id='sunbeam-gpt-js-extra'>
+var gptVars = {"pageType":"","category":"contest","advertiser":"","campaign":"","environment":"prod","theme":"wsvn","themeID":"1055211","postID":"592282","isNativo":""};
+</script>
+<script id='sunbeam-js-extra'>
+var sunbeam_global = {"home_url":"https:\/\/wsvn.com","temperature_cities":{"Fort Lauderdale":{"temperature":"72","class":"partly-cloudy___wxicon-30","current":true},"Hialeah":{"temperature":"72","class":"partly-cloudy___wxicon-30","current":false},"Key West":{"temperature":"73","class":"wind___wxicon-24","current":false},"Sunrise":{"temperature":"72","class":"partly-cloudy___wxicon-30","current":false}},"default_city":"Miami","brightcovePlaylistId":"6086666230001"};
+</script>
+<script type='text/javascript' src='../../_static/index%EF%B9%96%EF%B9%96-eJyVzEEOgjAUBNALAT8Vo2FBPAu2E6Whv6TzC9fXGBbujNuZeSP72vqsBjWxJxIorHrHlGQiYZRIeazW7ty0S7N2kY280ax+qQGfvmpAoc8F34uftxs05PIXOZLD3NLoLu7srsOpH+ILep9Kww==.js'></script>
+<script src='https://s7.addthis.com/js/300/addthis_widget.js?ver=0.3.7#pubid=wsvn' id='addthis-js'></script>
+<script type='text/javascript' src='../../_static/index%EF%B9%96%EF%B9%96%EA%A4%B7wp-content%EA%A4%B7themes%EA%A4%B7sunbeam%EA%A4%B7assets%EA%A4%B7js%EA%A4%B7vendor%EA%A4%B7jquery.fancybox.js,%EA%A4%B7wp-includes%EA%A4%B7js%EA%A4%B7wp-embed.min.js%EF%B9%96m=1614009936j.js'></script>
+<script src='https://stats.wp.com/e-202110.js' defer></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:9.5.1',blog:'174089892',post:'592282',tz:'-5',srv:'wsvn.com'} ]);
+	_stq.push([ 'clickTrackerInit', '174089892', '592282' ]);
+</script>
+<script src="https://ap.lijit.com/www/sovrn_beacon_standalone/sovrn_standalone_beacon.js?iid=245871-eb" async="true" id="sBeacon"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-11c838655229fa387cb","applicationID":"441183588","transactionName":"NV1UMBBVDUBUBhVaCgwXYxYLGwpdUQAZHRUKSA==","queueTime":0,"applicationTime":203,"atts":"GRpDRlhPHh8XBEMJHh9F","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

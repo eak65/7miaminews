@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="15px" viewBox="0 0 10 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		<g id="Weather-Page" transform="translate(-192.000000, -633.000000)">
+			<g id="sunrise" transform="translate(199.000000, 644.000000)" fill="#04132B" font-family="Helvetica" font-size="14" font-weight="normal" line-spacing="23">
+				<g id="Group-14">
+					<text id="Partly-cloudy.-High">
+						<tspan x="4.05566406" y="14">Partly cloudy. High around 75F. Winds </tspan>
+						<tspan x="65.1416016" y="37">NW at 5 to 10mph.</tspan>
+					</text>
+				</g>
+			</g>
+			<g id="Group" transform="translate(192.000000, 242.000000)" fill="#C7D0DC" fill-rule="nonzero">
+				<g id="Group-3" transform="translate(0.000000, 165.000000)">
+					<g id="Group-5" transform="translate(0.000000, 72.000000)">
+						<path d="M2.48950971,168.486058 C4.7474094,169.650758 7.5241123,168.768979 8.69179726,166.516989 C9.85948221,164.264863 10,154 10,154 C10,154 1.68307772,160.04764 0.515255402,162.29963 C-0.652429553,164.551756 0.231610016,167.321359 2.48950971,168.486058 Z" id="Path"></path>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>Group 2</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Weather-Page" transform="translate(-313.000000, -700.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1440" height="4263"></rect>
+            <g id="sunrise" transform="translate(199.000000, 644.000000)" fill="#999999">
+                <g id="Group-14">
+                    <g id="Group-2" transform="translate(114.000000, 56.000000)">
+                        <g id="icons/sunrise">
+                            <g fill-rule="nonzero">
+                                <path d="M14.1977698,8.45609152 C14.1977698,5.71617893 11.9687101,3.48711919 9.22879751,3.48711919 C6.48888492,3.48711919 4.25982517,5.71617893 4.25982517,8.45609152 C4.25982517,8.93868425 4.33119261,9.41988142 4.46857783,9.88049407 L4.47872149,9.88049407 L4.46048632,9.88049407 L13.9626879,9.88049407 L13.9890172,9.88049407 C14.1264024,9.41988142 14.1977698,8.93864548 14.1977698,8.45609152 Z" id="Path"></path>
+                                <rect id="Rectangle" x="8.64731377" y="0" width="1.16296747" height="2.32593493"></rect>
+                                <polygon id="Rectangle" transform="translate(12.877290, 2.141859) rotate(-59.973695) translate(-12.877290, -2.141859) " points="11.7143172 1.56037226 14.0402635 1.56037226 14.0402635 2.72334542 11.7143172 2.72334542"></polygon>
+                                <polygon id="Rectangle" transform="translate(15.546360, 4.813928) rotate(-29.954534) translate(-15.546360, -4.813928) " points="14.38348 4.23247864 16.7092399 4.23247864 16.7092399 5.39537795 14.38348 5.39537795"></polygon>
+                                <polygon id="Rectangle" transform="translate(16.521722, 8.463976) rotate(-89.931245) translate(-16.521722, -8.463976) " points="15.9402379 7.30100731 17.1032062 7.30100731 17.1032062 9.62694392 15.9402379 9.62694392"></polygon>
+                                <polygon id="Rectangle" transform="translate(5.545722, 2.141089) rotate(-30.021344) translate(-5.545722, -2.141089) " points="4.96428358 0.978231925 6.12715979 0.978231925 6.12715979 3.30394558 4.96428358 3.30394558"></polygon>
+                                <polygon id="Rectangle" transform="translate(2.876149, 4.814032) rotate(-60.045466) translate(-2.876149, -4.814032) " points="2.29471849 3.6511327 3.45757904 3.6511327 3.45757904 5.97693132 2.29471849 5.97693132"></polygon>
+                                <polygon id="Rectangle" transform="translate(1.902099, 8.464825) rotate(-0.068755) translate(-1.902099, -8.464825) " points="0.739130435 7.88334125 3.06506704 7.88334125 3.06506704 9.04630956 0.739130435 9.04630956"></polygon>
+                            </g>
+                            <g transform="translate(9.608696, 11.826087) rotate(-180.000000) translate(-9.608696, -11.826087) translate(0.739130, 6.652174)" fill-rule="nonzero">
+                                <path d="M14.1977698,8.45609152 C14.1977698,5.71617893 11.9687101,3.48711919 9.22879751,3.48711919 C6.48888492,3.48711919 4.25982517,5.71617893 4.25982517,8.45609152 C4.25982517,8.93868425 4.33119261,9.41988142 4.46857783,9.88049407 L4.47872149,9.88049407 L4.46048632,9.88049407 L13.9626879,9.88049407 L13.9890172,9.88049407 C14.1264024,9.41988142 14.1977698,8.93864548 14.1977698,8.45609152 Z" id="Path"></path>
+                                <rect id="Rectangle" x="8.64731377" y="0" width="1.16296747" height="2.32593493"></rect>
+                                <polygon id="Rectangle" transform="translate(12.877290, 2.141859) rotate(-59.973695) translate(-12.877290, -2.141859) " points="11.7143172 1.56037226 14.0402635 1.56037226 14.0402635 2.72334542 11.7143172 2.72334542"></polygon>
+                                <polygon id="Rectangle" transform="translate(15.546360, 4.813928) rotate(-29.954534) translate(-15.546360, -4.813928) " points="14.38348 4.23247864 16.7092399 4.23247864 16.7092399 5.39537795 14.38348 5.39537795"></polygon>
+                                <polygon id="Rectangle" transform="translate(16.521722, 8.463976) rotate(-89.931245) translate(-16.521722, -8.463976) " points="15.9402379 7.30100731 17.1032062 7.30100731 17.1032062 9.62694392 15.9402379 9.62694392"></polygon>
+                                <polygon id="Rectangle" transform="translate(5.545722, 2.141089) rotate(-30.021344) translate(-5.545722, -2.141089) " points="4.96428358 0.978231925 6.12715979 0.978231925 6.12715979 3.30394558 4.96428358 3.30394558"></polygon>
+                                <polygon id="Rectangle" transform="translate(2.876149, 4.814032) rotate(-60.045466) translate(-2.876149, -4.814032) " points="2.29471849 3.6511327 3.45757904 3.6511327 3.45757904 5.97693132 2.29471849 5.97693132"></polygon>
+                                <polygon id="Rectangle" transform="translate(1.902099, 8.464825) rotate(-0.068755) translate(-1.902099, -8.464825) " points="0.739130435 7.88334125 3.06506704 7.88334125 3.06506704 9.04630956 0.739130435 9.04630956"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
